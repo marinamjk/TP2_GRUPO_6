@@ -39,10 +39,7 @@ public class Profesor extends Empleado {
 	}
 
 	@Override
-	public String toString() {
-	//"ID: " + getId() + " NOMBRE: " + getNombre() + " EDAD: " + getEdad() + " CARGO:" +
-	//getCargo() + " ANTIGÜEDAD: " + getAntiguedadDocente();
-		
+	public String toString() {		
 		return "ID: "+ getId() + 
 				"\nnombre: "+ getNombre() + 
 				"\nedad: "+ getEdad() + 
