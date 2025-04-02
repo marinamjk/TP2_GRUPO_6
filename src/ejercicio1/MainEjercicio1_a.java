@@ -3,6 +3,10 @@ package ejercicio1;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
+
+/*5. Crear una clase llamada mainEjercicio1_a, donde se creen 5 profesores y se 
+guarden dentro de un arraylist. Mostrar la información utilizando un 
+iterador. */
 public class MainEjercicio1_a {
 	
 	static final int CANT_PROFESORES = 5;

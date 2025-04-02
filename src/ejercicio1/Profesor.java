@@ -3,10 +3,12 @@ package ejercicio1;
 import java.util.Objects;
 
 public class Profesor extends Empleado implements Comparable<Profesor>{
+	/* 2. Aplicar el concepto de encapsulamiento dentro de la clase profesor. */
 	//atributos
 	private String cargo;
 	private int antiguedadDocente;
 	
+	/* 3. Crear los respectivos constructores */
 	//constructores
 	public Profesor(String nombre, int edad, String cargo, int antiguedadDocente) {
 		super(nombre, edad);
@@ -38,6 +40,8 @@ public class Profesor extends Empleado implements Comparable<Profesor>{
 		this.antiguedadDocente = antiguedadDocente;
 	}
 
+	/* 4. Sobreescribir el método “toString()”, en este caso debe devolver la
+	 * siguiente información: id, nombre, edad, cargo y antiguedadDocente.*/
 	@Override
 	public String toString() {		
 		return "ID: "+ getId() + 
@@ -50,7 +54,6 @@ public class Profesor extends Empleado implements Comparable<Profesor>{
 	public boolean equals(Object obj) {
 		Profesor other = (Profesor) obj;
 		
-		//if (!Objects.equals(getId(), other.getId()) ) return false;
 		if (!Objects.equals(getNombre(), other.getNombre()) ) return false;
 		if (!Objects.equals(getEdad(), other.getEdad()) ) return false;
 		
