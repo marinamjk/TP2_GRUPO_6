@@ -2,7 +2,7 @@ package ejercicio1;
 
 import java.util.Objects;
 
-public class Profesor extends Empleado {
+public class Profesor extends Empleado implements Comparable<Profesor>{
 	//atributos
 	private String cargo;
 	private int antiguedadDocente;
@@ -41,16 +41,16 @@ public class Profesor extends Empleado {
 	@Override
 	public String toString() {		
 		return "ID: "+ getId() + 
-				"\nnombre: "+ getNombre() + 
-				"\nedad: "+ getEdad() + 
-				"\ncargo: "+ cargo + 
-				"\nantiguedad docente: " + antiguedadDocente; 
+				"\nNombre: "+ getNombre() + 
+				"\nEdad: "+ getEdad() + 
+				"\nCargo: "+ cargo + 
+				"\nAntiguedad docente: " + antiguedadDocente; 
 	}	
 	
 	public boolean equals(Object obj) {
 		Profesor other = (Profesor) obj;
 		
-		if (!Objects.equals(getId(), other.getId()) ) return false;
+		//if (!Objects.equals(getId(), other.getId()) ) return false;
 		if (!Objects.equals(getNombre(), other.getNombre()) ) return false;
 		if (!Objects.equals(getEdad(), other.getEdad()) ) return false;
 		
@@ -74,6 +74,20 @@ public class Profesor extends Empleado {
 		result = prime * result + ((getNombre() == null) ? 0 : getNombre().hashCode());
 		result = prime * result + Integer.hashCode(getEdad());
 		return result;
+	}
+
+	@Override
+	public int compareTo(Profesor o) {
+		//Ordenamiento por antiguedad de mayor a menor
+		
+		if(o.antiguedadDocente == this.antiguedadDocente)
+		return 0;
+		
+		if(o.antiguedadDocente < this.antiguedadDocente) 
+		{
+		 return -1;
+		}
+		return 1;
 	}
 	
 }
