@@ -44,5 +44,6 @@ public class MainEjercicio1_a {
 		
 		while(iteratorProfesor.hasNext())
 			System.out.println(iteratorProfesor.next() + "\n") ;
+		
 	}
 }
