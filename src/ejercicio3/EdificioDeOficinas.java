@@ -37,7 +37,7 @@ public class EdificioDeOficinas implements IEdificio{
 	public String toString() {
 		return "EdificioDeOficinas: "+
 				"\nNúmero de oficinas= " + nroOficinas + 
-				"\nSuperficie= " + superficie;
+				"\nSuperficie= " + superficie + "\n";
 	}
 
 	
