@@ -1,7 +1,9 @@
 package ejercicio3;
 
+import java.util.Set;
+
 public interface IInstalacionDeportiva {
 
-	public int getTipoInstalacion();
+	public Set<Integer> getTipoInstalacion();
 	
 }
