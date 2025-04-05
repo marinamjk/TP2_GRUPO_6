@@ -15,8 +15,6 @@ public class Polideportivo implements IInstalacionDeportiva, IEdificio, ITipoIns
 		this.nombre= "sin nombre";
 		this.superficie= 0;
 		this.tipoInstalacion = new HashSet<>();
-		this.tipoInstalacion.add(ITipoInstalacion.EDIFICIO);
-		this.tipoInstalacion.add(ITipoInstalacion.INSTALACION_DEPORTIVA);
 	}
 	
 	public Polideportivo(String nombre, double superficie, Set<Integer> tipoInstalacion) {
