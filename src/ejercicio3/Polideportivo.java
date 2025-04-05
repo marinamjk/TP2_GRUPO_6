@@ -1,22 +1,29 @@
 package ejercicio3;
 
-public class Polideportivo implements IInstalacionDeportiva, IEdificio{
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+public class Polideportivo implements IInstalacionDeportiva, IEdificio, ITipoInstalacion{
 
 	private String nombre;
 	private double superficie;
-	private int tipoInstalacion;
+	private Set<Integer> tipoInstalacion;
 	
 	public Polideportivo() 
 	{
 		this.nombre= "sin nombre";
 		this.superficie= 0;
-		this.tipoInstalacion= 0;
+		this.tipoInstalacion = new HashSet<>();
+		this.tipoInstalacion.add(ITipoInstalacion.EDIFICIO);
+		this.tipoInstalacion.add(ITipoInstalacion.INSTALACION_DEPORTIVA);
 	}
 	
-	public Polideportivo(String nombre, double superficie, int tipoInstalacion) {
+	public Polideportivo(String nombre, double superficie, Set<Integer> tipoInstalacion) {
+		
 		this.nombre = nombre;
 		this.superficie = superficie;
-		this.tipoInstalacion = tipoInstalacion;
+		this.tipoInstalacion = new HashSet<>(tipoInstalacion);
 	}
 	
 	
@@ -33,11 +40,11 @@ public class Polideportivo implements IInstalacionDeportiva, IEdificio{
 	}
 
 	public void setTipoInstalacion(int tipoInstalacion) {
-		this.tipoInstalacion = tipoInstalacion;
+		this.tipoInstalacion.add(tipoInstalacion);
 	}
 
 	@Override
-	public int getTipoInstalacion() {
+	public Set<Integer> getTipoInstalacion() {
 		return tipoInstalacion;
 	}
 
@@ -46,14 +53,23 @@ public class Polideportivo implements IInstalacionDeportiva, IEdificio{
 		return "Polideportivo: "+ 
 				"\nNombre= " + nombre + 
 				"\nSuperficie= " + superficie +
-				"\nTipo de instalacion= " + tipoInstalacion;
+				"\nTipo de instalacion= " + getDescripcion() + "\n";
 	}
 
 	@Override
 	public double getSuperficieEdificio() {
 		return superficie;
-	}		
+	}
 	
+	private String getDescripcion()
+	{
+		Iterator<Integer> iterator = this.tipoInstalacion.iterator();
+		String descripcion = "";
+		while(iterator.hasNext())
+			descripcion += "\n*" + ITipoInstalacion.getDescripcion(iterator.next()) ;
+		
+		return descripcion;
+	}
 }
 
 
