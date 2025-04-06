@@ -12,8 +12,8 @@ public class Fresco extends Producto{
 	 public Fresco(Date fechaCaducidad, int numLote, Date fechaEnvasado, String paisOrigen) 
 	 {
 	        super(fechaCaducidad, numLote);
-	        this.fechaEnvasado = fechaEnvasado;
-	        this.paisOrigen = paisOrigen;
+	        setFechaEnvasado(fechaEnvasado);
+	        setPaisOrigen(paisOrigen);
 	 }
 	 
 	// Getters y Setters
@@ -22,7 +22,14 @@ public class Fresco extends Producto{
 	    }
 
 	    public void setFechaEnvasado(Date fechaEnvasado) {
-	        this.fechaEnvasado = fechaEnvasado;
+	       if(fechaEnvasado.after(new Date())) {
+	        	System.out.println("La fecha de envasado debe coincidir con la fecha del sistema");
+	        	return;
+	        } 
+	        else 
+	        { 
+	        	this.fechaEnvasado=fechaEnvasado;        
+	        }
 	    }
 
 	    public String getPaisOrigen() {
@@ -30,7 +37,15 @@ public class Fresco extends Producto{
 	    }
 
 	    public void setPaisOrigen(String paisOrigen) {
-	        this.paisOrigen = paisOrigen;
+	       if (paisOrigen == null || paisOrigen.trim().isEmpty() || !paisOrigen.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+")) 
+	    	{
+	               System.out.println("Nombre de pais no valido");
+	               return; 
+	        } 
+	    	else 
+	            {
+	            	this.paisOrigen = paisOrigen;
+	            }
 	    }
 
 	    // Método para mostrar información
@@ -38,8 +53,8 @@ public class Fresco extends Producto{
 	    public void mostrarInfo() {
 	    	System.out.println("-----Producto FRESCO-------");
 	        super.mostrarInfo();
-	        System.out.println("Fecha de envasado: " + sdf.format(fechaEnvasado) +
-	        					"\nPaís de origen: " + paisOrigen+"\n");
+	        System.out.println("Fecha de envasado: " + sdf.format(getFechaEnvasado()) +
+	        					"\nPaís de origen: " + getPaisOrigen()+"\n");
 	    }
 	 
 }
