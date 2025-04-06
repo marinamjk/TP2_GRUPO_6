@@ -8,7 +8,7 @@ public class ProductoCongelado extends Producto {
 	
 	public ProductoCongelado(Date fechaCaducidad, int numLote, float tempCongRecom) {
 		super(fechaCaducidad, numLote);
-		this.tempCongRecom = tempCongRecom;
+		setTempCongRecom(tempCongRecom);
 	}
 
 	public float getTempCongRecom() {
@@ -16,14 +16,22 @@ public class ProductoCongelado extends Producto {
 	}
 
 	public void setTempCongRecom(float tempCongRecom) {
-		this.tempCongRecom = tempCongRecom;
+		if(tempCongRecom<=-18) 
+		{
+			this.tempCongRecom=tempCongRecom;
+		}
+		else{
+			
+			System.out.println("Temperatura no recomendable para un producto congelado");
+			return;
+	            }
 	}
 	
     @Override
     public void mostrarInfo() {
     	System.out.println("-----Producto Congelado-------");
         super.mostrarInfo();
-        System.out.println("Temperatuar de Congelación Recomendada: " + tempCongRecom + "° \n");
+       System.out.println("Temperatura de Congelación Recomendada: " + getTempCongRecom() + "° \n");
 
     }
 	
