@@ -22,7 +22,8 @@ public class ProductoCongelado extends Producto {
 		}
 		else{
 			
-			System.out.println("Temperatura no recomendable para un producto congelado");
+			System.out.println("La temperatura recomendada de congelacion es");
+			this.tempCongRecom=-18;
 			return;
 	            }
 	}
