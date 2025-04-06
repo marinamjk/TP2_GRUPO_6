@@ -15,3 +15,10 @@ public interface ITipoInstalacion {
 		return "SIN TIPO";
 	}
 }
+
+
+//PROPUESTA ANALIA:
+//public interface ITipoInstalacion {
+//	
+//	public String getTipoInstalacion();
+//}

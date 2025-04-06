@@ -7,3 +7,12 @@ public interface IInstalacionDeportiva {
 	public Set<Integer> getTipoInstalacion();
 	
 }
+
+
+//PROPUESTA ANALIA:
+//public interface IInstalacionDeportiva {
+//
+//	public String getTipoInstalacion();
+//	
+//}
+

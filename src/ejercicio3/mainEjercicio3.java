@@ -36,3 +36,33 @@ public class mainEjercicio3 {
 
 	}
 }
+
+
+//PROPUESTA ANALIA:
+//public class mainEjercicio3 {
+//	public static void main(String[] args) {
+//
+//
+//		 ArrayList<IEdificio> listaElementos = new ArrayList<>();
+//	        
+//		 Polideportivo polideportivo1 = new Polideportivo("Polideportivo A", 5000.0);
+//	        
+//	   
+//	     EdificioDeOficinas edificio1 = new EdificioDeOficinas(10, 2000.0);
+//	   
+//	        
+//	      
+//	      listaElementos.add(polideportivo1);
+//	      listaElementos.add(edificio1);
+//	        
+//	        
+//	        
+//	        Iterator<IEdificio> iterator = listaElementos.iterator();
+//	        
+//	        while (iterator.hasNext()) {
+//	            Object elemento = iterator.next();
+//	            System.out.println(elemento.toString());
+//	        }
+//
+//	}
+//}
