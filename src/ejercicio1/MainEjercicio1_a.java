@@ -2,6 +2,7 @@ package ejercicio1;
 
 import java.util.ArrayList;
 import java.util.ListIterator;
+import java.util.Scanner;
 
 
 /*5. Crear una clase llamada mainEjercicio1_a, donde se creen 5 profesores y se 
@@ -10,6 +11,8 @@ iterador. */
 public class MainEjercicio1_a {
 	
 	static final int CANT_PROFESORES = 5;
+	static ArrayList<Profesor> listProfesor2 = new ArrayList<Profesor>();
+	static Scanner scanner = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		
@@ -17,6 +20,9 @@ public class MainEjercicio1_a {
 		ArrayList<Profesor> listProfesor = new ArrayList<Profesor>(CANT_PROFESORES);
 		cargarArray(vProfesor, listProfesor);
 		mostrarArray(listProfesor);
+		//-------------------------------------------------------//
+		cargarProfesor();
+		mostrarProfesores(listProfesor2);
 	}
 	
 	static Profesor[] crearVProfesores()
@@ -45,5 +51,40 @@ public class MainEjercicio1_a {
 		while(iteratorProfesor.hasNext())
 			System.out.println(iteratorProfesor.next() + "\n") ;
 		
+	}
+	static void cargarProfesor() 
+	{		
+		int i=0;		
+		for(i=0;i<5;i++) 
+		{	
+		Profesor nuevoProfesor = new Profesor();				
+		System.out.print("Ingrese nombre: " );
+		nuevoProfesor.setNombre(scanner.nextLine());
+		System.out.print("Ingrese edad: ");
+		int edad = Integer.parseInt(scanner.nextLine());
+		nuevoProfesor.setEdad(edad);
+		System.out.print("Ingrese Cargo: ");
+		nuevoProfesor.setCargo(scanner.nextLine());
+		System.out.print("Ingrese Antiguedad: ");
+		int antiguedad =Integer.parseInt(scanner.nextLine());
+		nuevoProfesor.setAntiguedadDocente(antiguedad);
+		
+		 agregarNuevoProfesor(nuevoProfesor,listProfesor2);
+		}		
+		System.out.println("Profesores cargados correctamente.");		
+	}
+	
+	static void agregarNuevoProfesor (Profesor p, ArrayList<Profesor> listNuevosProfesores)
+	{
+		listNuevosProfesores.add(p);
+	}
+	
+	static void mostrarProfesores (ArrayList<Profesor> listNuevosProfesores)
+	{
+		ListIterator<Profesor> iteradorCargaPantalla = listProfesor2.listIterator();
+		
+		while(iteradorCargaPantalla.hasNext()) 
+		
+			System.out.println(iteradorCargaPantalla.next() + "\n") ;			
 	}
 }
