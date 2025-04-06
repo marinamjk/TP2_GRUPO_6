@@ -12,8 +12,8 @@ public class Profesor extends Empleado implements Comparable<Profesor>{
 	//constructores
 	public Profesor(String nombre, int edad, String cargo, int antiguedadDocente) {
 		super(nombre, edad);
-		this.cargo = cargo;
-		this.antiguedadDocente = antiguedadDocente;
+		setCargo(cargo);
+		setAntiguedadDocente(antiguedadDocente);
 	}
 	
 	public Profesor() {
@@ -28,7 +28,12 @@ public class Profesor extends Empleado implements Comparable<Profesor>{
 	}
 
 	public void setCargo(String cargo) {
-		this.cargo = cargo;
+		if (cargo == null || cargo.trim().isEmpty() || !cargo.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+")) 
+		{
+	        	this.cargo = "No valido";
+	    	} else {
+	        	this.cargo = cargo;
+	    		}
 	}
 
 	public int getAntiguedadDocente() {
@@ -37,7 +42,8 @@ public class Profesor extends Empleado implements Comparable<Profesor>{
 
 	//Metodos
 	public void setAntiguedadDocente(int antiguedadDocente) {
-		this.antiguedadDocente = antiguedadDocente;
+		if(antiguedadDocente>=0) 
+			this.antiguedadDocente = antiguedadDocente;
 	}
 
 	/* 4. Sobreescribir el método “toString()”, en este caso debe devolver la
