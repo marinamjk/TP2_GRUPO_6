@@ -8,7 +8,7 @@ public class ProductoRefrigerado extends Producto {
 	
 	public ProductoRefrigerado(Date fechaCaducidad, int numLote, int codOrgSupAliment) {
 		super(fechaCaducidad, numLote);
-		this.codOrgSupAliment = codOrgSupAliment;
+                setCodOrgSupAliment(codOrgSupAliment);
 	}
 
 	public int getCodOrgSupAliment() {
@@ -16,7 +16,15 @@ public class ProductoRefrigerado extends Producto {
 	}
 
 	public void setCodOrgSupAliment(int codOrgSupAliment) {
-		this.codOrgSupAliment = codOrgSupAliment;
+		if(codOrgSupAliment >= 0) 
+		{
+			this.codOrgSupAliment = codOrgSupAliment;
+		}
+		else 
+		{
+			System.out.println("El codigo de la organizacion alimentaria no puede ser negativo");
+			return;
+		}
 	}
 
     // Método para mostrar información
@@ -24,7 +32,7 @@ public class ProductoRefrigerado extends Producto {
     public void mostrarInfo() {
     	System.out.println("-----Producto Refrigerado-------");
         super.mostrarInfo();
-        System.out.println("Código del Org. de Supervisión Alimentaria: " + codOrgSupAliment + "\n");
+        System.out.println("Código del Org. de Supervisión Alimentaria: " + getCodOrgSupAliment() + "\n");
 
     }
 	
