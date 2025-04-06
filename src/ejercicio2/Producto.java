@@ -12,8 +12,8 @@ public class Producto {
 	 //Constructor	 
 	 public Producto(Date fechaCaducidad, int numLote) 
 	 {
-	        this.fechaCaducidad = fechaCaducidad;
-	        this.numLote = numLote;
+	    setFechaCaducidad(fechaCaducidad);
+	    setNumLote(numLote);
 	 }
 	 
 	//getters & setters
@@ -21,20 +21,36 @@ public class Producto {
 		return fechaCaducidad;
 	}
 	public void setFechaCaducidad(Date fechaCaducidad) {
-		this.fechaCaducidad = fechaCaducidad;
+		if(fechaCaducidad.before(new Date())) {
+		
+		  System.out.println("La fecha de vencimiento no puede ser un dia anterior al actual");
+		  return;
+		}
+		  else {
+		
+		  this.fechaCaducidad=fechaCaducidad;
+		  }
 	}
 	public int getNumLote() {
 		return numLote;
 	}
 	public void setNumLote(int numLote) {
-		this.numLote = numLote;
+		if(numLote < 0 ) {
+		
+			System.out.println("El numero de lote no puede ser un numero negativo");
+			return;
+		}
+		else 
+		{
+			this.numLote = numLote;
+		}
 	}
 	 
 	// Métodos
     public void mostrarInfo() {
         System.out.println(
-        		"Fecha de caducidad: " + sdf.format(fechaCaducidad) +
-        		"\nNúmero de lote: " + numLote
+        		"Fecha de caducidad: " + sdf.format(getFechaCaducidad()) +
+        		"\nNúmero de lote: " + getNumLote()
         		);
     }
 }
