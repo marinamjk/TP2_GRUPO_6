@@ -3,7 +3,7 @@ package ejercicio2;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-public class Producto {
+public abstract class Producto implements Comparable <Producto> {
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	 private Date fechaCaducidad;
@@ -52,5 +52,17 @@ public class Producto {
         		"Fecha de caducidad: " + sdf.format(getFechaCaducidad()) +
         		"\nNúmero de lote: " + getNumLote()
         		);
+    }
+	 @Override
+    public int compareTo(Producto otroProducto) {
+        // Comparar por fecha de caducidad
+        int resultado = this.fechaCaducidad.compareTo(otroProducto.getFechaCaducidad());
+
+        // Si las fechas son iguales, comparo por número de lote
+        if (resultado == 0) {
+            resultado = Integer.compare(this.numLote, otroProducto.getNumLote());
+        }
+
+        return resultado;
     }
 }
