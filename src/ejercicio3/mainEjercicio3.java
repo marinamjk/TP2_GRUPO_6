@@ -23,17 +23,20 @@ public class mainEjercicio3 {
 	        
 	      
 	      listaElementos.add(polideportivo1);
-	      listaElementos.add(edificio1);
-	        
-	        
-	        
+	      listaElementos.add(edificio1);	        
+	    
 	        Iterator<Object> iterator = listaElementos.iterator();
 	        
 	        while (iterator.hasNext()) {
 	            Object elemento = iterator.next();
 	            System.out.println(elemento.toString());
 	        }
-
+	        /*
+	        for (Object object : listaElementos) {
+	    				System.out.println(object.toString());
+	    	}
+	    	*/        
+	        
 	}
 }
 

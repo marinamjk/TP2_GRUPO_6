@@ -81,10 +81,16 @@ public class MainEjercicio1_a {
 	
 	static void mostrarProfesores (ArrayList<Profesor> listNuevosProfesores)
 	{
+		
 		ListIterator<Profesor> iteradorCargaPantalla = listProfesor2.listIterator();
 		
 		while(iteradorCargaPantalla.hasNext()) 
 		
-			System.out.println(iteradorCargaPantalla.next() + "\n") ;			
+			System.out.println(iteradorCargaPantalla.next() + "\n") ;	
+		/*
+		for (Profesor profesor : listNuevosProfesores) {
+			System.out.println(profesor.toString());
+		}
+		*/
 	}
 }

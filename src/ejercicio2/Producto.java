@@ -1,7 +1,8 @@
 package ejercicio2;
 
-import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 
 public abstract class Producto implements Comparable <Producto> {
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -14,6 +15,7 @@ public abstract class Producto implements Comparable <Producto> {
 	 {
 	    setFechaCaducidad(fechaCaducidad);
 	    setNumLote(numLote);
+	    
 	 }
 	 
 	//getters & setters
