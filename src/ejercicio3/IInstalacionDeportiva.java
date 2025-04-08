@@ -1,6 +1,10 @@
 package ejercicio3;
 
 //import java.util.Set;
+public interface IInstalacionDeportiva 
+{
+	public String getTipoDeInstalacion();	
+}
 
 //public interface IInstalacionDeportiva {
 //
@@ -9,9 +13,5 @@ package ejercicio3;
 //}
 
 
-public interface IInstalacionDeportiva {
 
-	public String getTipoDeInstalacion();
-	
-}
 

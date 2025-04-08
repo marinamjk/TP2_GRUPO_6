@@ -1,6 +1,6 @@
 package ejercicio3;
 
-public abstract class Edificio { //En realidad debe llamarse "Edificio, hay que renombrar el archivo si lo cambiaramos
+public abstract class Edificio {
 
 	private double superficie;
 
