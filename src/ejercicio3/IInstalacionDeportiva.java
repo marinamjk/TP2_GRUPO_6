@@ -1,18 +1,17 @@
 package ejercicio3;
 
-import java.util.Set;
+//import java.util.Set;
+
+//public interface IInstalacionDeportiva {
+//
+//	public Set<Integer> getTipoInstalacion();
+//	
+//}
+
 
 public interface IInstalacionDeportiva {
 
-	public Set<Integer> getTipoInstalacion();
+	public String getTipoDeInstalacion();
 	
 }
-
-
-//PROPUESTA ANALIA:
-//public interface IInstalacionDeportiva {
-//
-//	public String getTipoInstalacion();
-//	
-//}
 
