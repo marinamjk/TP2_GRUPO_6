@@ -21,8 +21,9 @@ public class mainEjercicio3 {
 	        Iterator<Edificio> iterator = listaElementos.iterator();
 	        
 	        while (iterator.hasNext()) {
-	            Object elemento = iterator.next();
-	            System.out.println(elemento.toString());
+	            Edificio elemento = iterator.next();
+	            System.out.print(elemento.toString());
+	            System.out.println(elemento.getTipoDeInstalacion()+ "\n");
 	        }
 	        
 	}

@@ -22,6 +22,11 @@ public class EdificioDeOficinas extends Edificio{
 	public void setNroOficinas(int nroOficinas) {
 		this.nroOficinas = nroOficinas;
 	}
+	
+	@Override
+	public String getTipoDeInstalacion() {
+		return super.getTipoDeInstalacion() +  "y un Edificio de Oficinas";
+	}
 
 
 	@Override
