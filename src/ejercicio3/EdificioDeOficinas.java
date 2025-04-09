@@ -24,8 +24,8 @@ public class EdificioDeOficinas extends Edificio{
 	}
 	
 	@Override
-	public String getTipoDeInstalacion() {
-		return super.getTipoDeInstalacion() +  "y un Edificio de Oficinas";
+	public int getTipoDeInstalacion() {
+		return 1;
 	}
 
 
