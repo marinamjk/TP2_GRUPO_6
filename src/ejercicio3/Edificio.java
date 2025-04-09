@@ -22,7 +22,7 @@ public abstract class Edificio {
 		this.superficie = superficie;
 	}
 
-	public String getTipoDeInstalacion() {
-		return "Es un edificio ";
+	public int getTipoDeInstalacion() {
+		return 2;
 	}
 }
