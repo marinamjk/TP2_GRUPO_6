@@ -33,9 +33,9 @@ public class Polideportivo extends Edificio implements IInstalacionDeportiva {
 	}
 
 	@Override
-	public String getTipoDeInstalacion() {
+	public int getTipoDeInstalacion() {
 		
-		return super.getTipoDeInstalacion() + " y es " + INSTALACION_DEPORTIVA ;
+		return 0;
 	}
 }
 
